@@ -12,11 +12,11 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.getElementById('dice-1').src = 'dice-' + ran1 + '.png';
         document.getElementById('dice-2').src = 'dice-' + ran2 + '.png';
 
-        if (ran1 !== 1 && ran2 !== 1) {
+        if (ran1 === 1 || ran2 === 1) {
+            nextPlayer();
+        } else {
             localStore += ran1 + ran2;
             document.querySelector('#current-' + turn).textContent = localStore;
-        } else {
-            nextPlayer();
         }
     }
 });
